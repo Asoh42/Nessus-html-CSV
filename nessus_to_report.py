@@ -38,10 +38,10 @@ def main(filename):
 		
 def select(ip,id):
 	conn = sqlite3.connect('vuln.db')
-	conn.text_factory=bytes
+	conn.text_factory=str
 	cursor = conn.cursor()
 	for row in cursor.execute("select * from VULNDB where Plugin_ID=?", (id,)):
-		return [ip,row[1].decode(),row[2].decode(),row[3].decode(),row[4].decode()]
+		return [ip,row[1],row[2],row[3],row[4]]
 		
 
 if __name__ == '__main__':

@@ -41,7 +41,7 @@ def select(ip,id):
 	conn.text_factory=bytes
 	cursor = conn.cursor()
 	for row in cursor.execute("select * from VULNDB where Plugin_ID=?", (id,)):
-		return [ip,row[1].decode('gbk'),row[2].decode('gbk'),row[3].decode('gbk'),row[4].decode('gbk')]
+		return [ip,row[1].decode(),row[2].decode(),row[3].decode(),row[4].decode()]
 		
 
 if __name__ == '__main__':

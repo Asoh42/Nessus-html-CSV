@@ -1,0 +1,4 @@
+etree
+lxml
+sqlite3
+unicodecsv

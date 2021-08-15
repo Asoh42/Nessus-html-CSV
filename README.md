@@ -1,9 +1,11 @@
 # Nessus-html-CSV
 根据https://github.com/Bypass007/Nessus_to_report
 大佬的GitHub项目进行更改，大佬的中文数据库打开有乱码，我对数据库进行utf-8重新编写。
+Nessus扫描完成，解析英文html报告，生成中文csv报告
 1、Nessus扫描结束，选择HTML类型，Report选择Custom，Croup By 选择Host，导出HTML报告。 
 
 2、运行脚本： Nessus_resport.py test.html 
+
 
 运行过程截图：
 
@@ -14,5 +16,6 @@
 参考资料：
 
 中文漏洞库：https://github.com/FunnyKun/NessusReportInChinese
+Bypass:https://github.com/Bypass007/Nessus_to_report
 
-Bypass
+

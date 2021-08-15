@@ -10,15 +10,15 @@ import unicodecsv as ucsv
 host=''
 result_list=[] 
 def htm_parse(l):      
-    if '#d43f3a'.encode() in etree.tostring(l):
+    if b'#d43f3a' in etree.tostring(l):
         info=u"严重 - "+l.text
-    elif '#ee9336'.encode() in etree.tostring(l):
+    elif b'#ee9336' in etree.tostring(l):
         info=u"高危 - "+l.text
-    elif '#fdc431'.encode() in etree.tostring(l):
+    elif b'#fdc431' in etree.tostring(l):
         info=u"中危 - "+l.text
-    elif '#3fae49'.encode() in etree.tostring(l):
+    elif b'#3fae49' in etree.tostring(l):
         info=u"低危 - "+l.text           
-    elif '#0071b9'.encode() in etree.tostring(l):
+    elif b'#0071b9' in etree.tostring(l):
         info=u'信息泄露 - '+l.text
     else:
         info='Parsing error,Check that the versions are consistent.'
@@ -27,9 +27,9 @@ def main(filename):
     html = etree.parse(filename,etree.HTMLParser())
     ls =html.xpath('/html/body/div[1]/div[3]/div')
     for i in ls:
-        if "font-size: 22px; font-weight: bold; padding: 10px 0;".encode() in etree.tostring(i):
+        if b"font-size: 22px; font-weight: bold; padding: 10px 0;" in etree.tostring(i):
             host=i.text
-        elif "this.style.cursor".encode() in etree.tostring(i):
+        elif b"this.style.cursor" in etree.tostring(i):
             result=host+" - "+htm_parse(i)
             print (result)
             result_list.append(result)

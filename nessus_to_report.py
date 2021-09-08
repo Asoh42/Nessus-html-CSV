@@ -50,7 +50,7 @@ if __name__ == '__main__':
 	#list_host=[u'192.168.98.254 - 高危 - 10203 - rexecd Service Detection',u'192.168.98.254 - 高危 - 11233 - rexecd Service Detection']
 	
 	with open('result.csv', 'wb') as f:
-		w = ucsv.writer(f, encoding = 'gbk')
+		w = ucsv.writer(f, encoding = 'utf-8-sig')
 		title=[u'服务器IP',u'漏洞名称',u'风险级别',u'漏洞描述',u'修复建议']
 		w.writerow(title)
 		for i in list_host:
